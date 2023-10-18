@@ -41,7 +41,7 @@ void Node::parseAttributes()
 		while (isspace(*ptr)) ++ptr;
 
 		end = ptr;
-		while (isalnum(*end) || *end == '-') ++end;
+		while (isalnum(*end) || *end == '-' || *end == '_') ++end;
 		key.assign(end - ptr, '\0');
 		transform(ptr, end, key.begin(), ::tolower);
 		ptr = end;
