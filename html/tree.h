@@ -700,7 +700,7 @@ iter tree<T, tree_node_allocator>::append_child(iter position, const T& x)
    // the API change.
    assert(position.node!=head);
 
-   tree_node* tmp = alloc_.allocate(1,0);
+   tree_node* tmp = alloc_.allocate(1);
    kp::constructor(&tmp->data, x);
    tmp->first_child=0;
    tmp->last_child=0;
@@ -756,7 +756,7 @@ iter tree<T, tree_node_allocator>::insert(iter position, const T& x)
       position.node=feet; // Backward compatibility: when calling insert on a null node,
                           // insert before the feet.
       }
-   tree_node* tmp = alloc_.allocate(1,0);
+   tree_node* tmp = alloc_.allocate(1);
    kp::constructor(&tmp->data, x);
    tmp->first_child=0;
    tmp->last_child=0;
