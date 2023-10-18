@@ -416,8 +416,8 @@ tree<T, tree_node_allocator>::~tree()
 template <class T, class tree_node_allocator>
 void tree<T, tree_node_allocator>::head_initialise_() 
    { 
-   head = alloc_.allocate(1,0); // MSVC does not have default second argument 
-   feet = alloc_.allocate(1,0);
+   head = alloc_.allocate(1);
+   feet = alloc_.allocate(1);
 
    head->parent=0;
    head->first_child=0;
