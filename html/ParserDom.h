@@ -15,6 +15,7 @@ namespace htmlcxx
 				~ParserDom() {}
 
 				const tree<Node> &parseTree(const std::string &html);
+				const tree<Node>& parseTree(const char* cchStartHtml, const char* cchEndStart);
 				const tree<Node> &getTree()
 				{ return mHtmlTree; }
 
